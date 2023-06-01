@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS public.groups;
+CREATE TABLE IF NOT EXISTS public.groups
+  (
+  groups_id integer NOT NULL DEFAULT nextval('groups_groups_id_seq'::regclass),
+  groups_name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+  CONSTRAINT groups_pkey PRIMARY KEY (groups_id)
+  )
+TABLESPACE pg_default;
+ALTER TABLE IF EXISTS public.groups
+OWNER to ordis;
